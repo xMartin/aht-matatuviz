@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/d3.v3.js"></script>
+
+    <link rel="stylesheet" href="css/style.css"></link>
+
+    <script>
+    function draw(data) {
+        "use strict";
+
+		var chart = d3.select("body").append("div")
+			.attr("class", "chart");
+
+		chart.selectAll("div")
+			.data(data)
+			.enter().append("div")
+			.style("width", function(d) { return d * 10 + "px"; })
+			.text(function(d) { return d; });
+	}
+    </script>
+</head>
+<body>
+    <script>
+        d3.json('data/simple.json', draw);
+    </script>
+</body>
+</html>
