@@ -56,11 +56,12 @@
     function draw(data) {
         "use strict";
 
+        data = data.posts;
 		var processedData = [];
 		for (var hour = 0; hour < 24; hour++) {
 			var offenseCount = 0;
 			data.forEach(function(entry) {
-				var thisHour = new Date(entry.date).getHours();
+				var thisHour = new Date(entry.datetime).getHours();
 				if (thisHour == hour) {
 					offenseCount++;
 				}
@@ -75,10 +76,10 @@
 			.data(processedData)
 			.enter().append("div")
 			.style("width", function(d) { return d * 10 + "px"; })
-			.style("height", "10px")
+			.style("height", "20px")
 			.text(function(d) { return d || ""; });
 	}
-	d3.json('data/ma3route.json', draw);
+	d3.json('data/rawdata.json', draw);
     </script>
   </body>
 </html>
