@@ -10,20 +10,33 @@
     function draw(data) {
         "use strict";
 
+		var processedData = [];
+		for (var hour = 0; hour < 24; hour++) {
+			var offenseCount = 0;
+			data.forEach(function(entry) {
+				var thisHour = new Date(entry.date).getHours();
+				if (thisHour == hour) {
+					offenseCount++;
+				}
+			});
+			processedData[hour] = offenseCount;
+		}
+
 		var chart = d3.select("body").append("div")
 			.attr("class", "chart");
 
 		chart.selectAll("div")
-			.data(data)
+			.data(processedData)
 			.enter().append("div")
 			.style("width", function(d) { return d * 10 + "px"; })
-			.text(function(d) { return d; });
+			.style("height", "10px")
+			.text(function(d) { return d || ""; });
 	}
     </script>
 </head>
 <body>
-    <script>
-        d3.json('data/simple.json', draw);
-    </script>
+	<script>
+		d3.json('data/ma3route.json', draw);
+	</script>
 </body>
 </html>
