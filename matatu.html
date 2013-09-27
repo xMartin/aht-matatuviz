@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mchat - Matatu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <a href="index.html" class="navbar-brand">Mchat</a>
+      </div>
+
+      <div id="matatu" class="row">
+        <div class="col-md-4">
+          <img src="images/matatu.jpg" class="img img-rounded">
+        </div>
+
+        <div class="col-md-8">
+          <h2>Rate matatu</h2>
+          <form name="rateMatatu" class="form" role="form">
+            <div class="form-group col-md-6">
+              <label for="route">Select route</label>
+              <select name="route" class="form-control">
+                <option disabled selected value="null">Route</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="matatuSacco">Select sacco</label>
+              <select name="matatuSacco" class="form-control">
+                <option disabled selected value="null">Sacco</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="date">Date of travel</label>
+              <input type="date" name="date" class="form-control">  
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="satisfaction">Overall satisfaction</label>
+              <input type="number" name="satisfaction" class="form-control">  
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="cost">Cost of trip</label>
+              <input type="number" name="cost" class="form-control">  
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="crewQuality">Quality of crew</label>
+              <input type="number" name="crewQuality" class="form-control">  
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="ergonimicsQuality">Quality of ergonomics / interior</label>
+              <input type="number" name="ergonimicsQuality" class="form-control">  
+            </div>
+
+            <div class="form-group col-md-2">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="overlapping" value="true">
+                  Overlapping?
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="overloading" value="true">
+                  Overloading?
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

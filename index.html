@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <script type="text/javascript" src="js/d3.v3.js"></script>
+  <head>
+    <title>Mchat</title>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet"></link>
+  </head>
 
-    <link rel="stylesheet" href="css/style.css"></link>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <a href="index.html" class="navbar-brand">Mchat</a>
+      </div>
+
+      <div id="matatu" class="row">
+        <div class="col-md-4">
+          <img src="images/matatu.jpg" class="img-rounded img-responsive">
+        </div>
+        <div class="col-md-8">
+          <h2>Matatu</h2>
+          <h4><a href="matatu.html">Rate a matatu <span class="glyphicon glyphicon-arrow-right"></span></a></h4>
+        </div>
+      </div>
+
+      <div id="taxi" class="row">
+        <div class="col-md-4">
+          <img src="images/taxi.jpg" class="img-rounded img-responsive">
+        </div>
+        <div class="col-md-8">
+          <h2>Taxi</h2>
+          <h4><a href="#">Rate a taxi <span class="glyphicon glyphicon-arrow-right"></span></a>
+        </h4>        </div>
+      </div>
+
+      <div id="motorcycle" class="row">
+        <div class="col-md-4">
+          <img src="images/motorcycle.jpg" class="img-rounded img-responsive">
+        </div>
+        <div class="col-md-8">
+          <h2>Motorcycle</h2>
+          <h4><a href="#">Rate a motorcycle <span class="glyphicon glyphicon-arrow-right"></span></a></h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Load d3 visualization library -->
+    <script type="text/javascript" src="js/d3.v3.js"></script>
 
     <script>
     function draw(data) {
@@ -22,7 +68,7 @@
 			processedData[hour] = offenseCount;
 		}
 
-		var chart = d3.select("body").append("div")
+		var chart = d3.select(".container").append("div")
 			.attr("class", "chart");
 
 		chart.selectAll("div")
@@ -32,11 +78,7 @@
 			.style("height", "10px")
 			.text(function(d) { return d || ""; });
 	}
+	d3.json('data/ma3route.json', draw);
     </script>
-</head>
-<body>
-	<script>
-		d3.json('data/ma3route.json', draw);
-	</script>
-</body>
+  </body>
 </html>
