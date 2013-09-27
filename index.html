@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <title>Mchat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet"></link>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <h1 class="navbar-brand">Mchat</h1>
+      </div>
+
+      <div id="matatu" class="row">
+        <div class="col-md-4">
+          <img src="images/matatu.jpg" class="img-rounded img-responsive">
+        </div>
+        <div class="col-md-8">
+          <h2>Matatu</h2>
+          <h4><a href="#">Rate a matatu <span class="glyphicon glyphicon-arrow-right"></span></a></h4>
+        </div>
+      </div>
+
+      <div id="taxi" class="row">
+        <div class="col-md-4">
+          <img src="images/taxi.jpg" class="img-rounded img-responsive">
+        </div>
+        <div class="col-md-8">
+          <h2>Taxi</h2>
+          <h4><a href="#">Rate a taxi <span class="glyphicon glyphicon-arrow-right"></span></a>
+        </h4>        </div>
+      </div>
+
+      <div id="motorcycle" class="row">
+        <div class="col-md-4">
+          <img src="images/motorcycle.jpg" class="img-rounded img-responsive">
+        </div>
+        <div class="col-md-8">
+          <h2>Motorcycle</h2>
+          <h4><a href="#">Rate a motorcycle <span class="glyphicon glyphicon-arrow-right"></span></a></h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Load d3 visualization library -->
     <script type="text/javascript" src="js/d3.v3.js"></script>
 
-    <link rel="stylesheet" href="css/style.css"></link>
-
     <script>
-    function draw(data) {
-        "use strict";
+      function draw(data) {
+          "use strict";
 
-		var chart = d3.select("body").append("div")
-			.attr("class", "chart");
+        var chart = d3.select("body").append("div")
+          .attr("class", "chart");
 
-		chart.selectAll("div")
-			.data(data)
-			.enter().append("div")
-			.style("width", function(d) { return d * 10 + "px"; })
-			.text(function(d) { return d; });
-	}
+        chart.selectAll("div")
+          .data(data)
+          .enter().append("div")
+          .style("width", function(d) { return d * 10 + "px"; })
+          .text(function(d) { return d; });
+      }
+
+      d3.json('data/simple.json', draw);
     </script>
-</head>
-<body>
-    <script>
-        d3.json('data/simple.json', draw);
-    </script>
-</body>
+  </body>
 </html>
