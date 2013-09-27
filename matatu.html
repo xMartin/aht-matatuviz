@@ -10,6 +10,13 @@
     <div class="container">
       <div class="navbar navbar-inverse">
         <a href="index.html" class="navbar-brand">Mchat</a>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Pie Chart</a></li>
+            <li><a href="#">Word Cloud</a></li>
+          </ul>
+        </div>
       </div>
 
       <div id="matatu" class="row">
@@ -42,27 +49,27 @@
 
             <div class="form-group col-md-4">
               <label for="date">Date of travel</label>
-              <input type="date" name="date" class="form-control">  
+              <input type="date" name="date" class="form-control">
             </div>
 
             <div class="form-group col-md-4">
               <label for="satisfaction">Overall satisfaction</label>
-              <input type="number" name="satisfaction" class="form-control">  
+              <input type="number" name="satisfaction" class="form-control">
             </div>
 
             <div class="form-group col-md-4">
               <label for="cost">Cost of trip</label>
-              <input type="number" name="cost" class="form-control">  
+              <input type="number" name="cost" class="form-control">
             </div>
 
             <div class="form-group col-md-4">
               <label for="crewQuality">Quality of crew</label>
-              <input type="number" name="crewQuality" class="form-control">  
+              <input type="number" name="crewQuality" class="form-control">
             </div>
 
             <div class="form-group col-md-4">
               <label for="ergonimicsQuality">Quality of ergonomics / interior</label>
-              <input type="number" name="ergonimicsQuality" class="form-control">  
+              <input type="number" name="ergonimicsQuality" class="form-control">
             </div>
 
             <div class="form-group col-md-2">
@@ -85,8 +92,10 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Load d3 visualization library -->
+    <script type="text/javascript" src="js/d3.v3.js"></script>
   </body>
 </html>
